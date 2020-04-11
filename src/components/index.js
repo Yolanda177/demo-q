@@ -13,9 +13,8 @@ const req = require.context('.', true, /\.vue$/)
 req.keys().forEach(fileName => {
   // require模块
   const componentConfig = req(fileName)
-  const name =
-    fileName.name ||
-    fileName
+  const name = fileName.name
+    || fileName
       .replace(/^\.\/.*\//, '')
       .replace(/\.vue$/, '')
       .toLowerCase()

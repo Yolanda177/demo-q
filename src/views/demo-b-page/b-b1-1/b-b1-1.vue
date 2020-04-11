@@ -1,6 +1,13 @@
+<!--
+ * @Description:
+ * @Author: Liangqq
+ * @Date: 2020-04-08 14:58:56
+ * @LastEditTime: 2020-04-08 14:59:08
+ * @LastEditors: Liangqq
+ -->
 <template>
   <div>
-    e Page
+    b1-1
     <div>{{num}}</div>
     <div>
       <el-button @click="handleClickAdd">计算+</el-button>
@@ -10,7 +17,7 @@
 
 <script>
 export default {
-  name: 'demo-e-page',
+  name: "b-b1-1",
   components: {},
   data() {
     return {

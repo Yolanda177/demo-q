@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test Demo</title>
+  <script type="text/javascript" src="./assets/vue.js"></script>
+</head>
+
+<body>
+  <h1>Test Demo</h1>
+  <hr>
+  <div class="test-demo" id="app">
+    <h1>{{song}}</h1>
+    <p>《{{album.theme}}》是{{singer}}2005年11月发的专辑</p>
+    <p>主打歌为{{album.theme}}</p>
+    <p>作词人为{{singer}}等人</p>
+    为你弹奏肖邦的{{album.theme}}
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        song: '发如雪',
+        album: {
+          name: '十一月的肖邦',
+          theme: '夜曲'
+        },
+        singer: '周杰伦'
+      }
+    });
+  </script>
+</body>
+
+</html>

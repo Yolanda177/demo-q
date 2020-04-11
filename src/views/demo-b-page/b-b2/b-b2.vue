@@ -1,6 +1,6 @@
 <template>
   <div>
-    e Page
+    b2 Page
     <div>{{num}}</div>
     <div>
       <el-button @click="handleClickAdd">计算+</el-button>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'demo-e-page',
+  name: 'b-b2',
   components: {},
   data() {
     return {

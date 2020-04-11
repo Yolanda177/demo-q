@@ -10,7 +10,9 @@
       <el-main>
         <div class="page-container" ref="pageContainer">
           <transition name="fade" mode="out-in">
-            <router-view />
+            <keep-alive>
+              <router-view></router-view>
+            </keep-alive>
           </transition>
         </div>
       </el-main>
@@ -167,4 +169,3 @@ export default {
   }
 }
 </style>
-

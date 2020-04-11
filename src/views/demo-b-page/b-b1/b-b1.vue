@@ -1,21 +1,17 @@
 <!--
  * @Description:
  * @Author: Liangqq
- * @Date: 2019-11-13 09:45:53
- * @LastEditTime: 2020-04-08 15:00:25
+ * @Date: 2019-12-14 21:49:04
+ * @LastEditTime: 2020-04-08 15:00:42
  * @LastEditors: Liangqq
  -->
 <template>
   <div>
-    b Page
+    b1
     <div>{{num}}</div>
     <div>
       <el-button @click="handleClickAdd">计算+</el-button>
-    </div>
-    <div>
-      <el-button @click="handleToB1">to B1</el-button>
-      <el-button @click="handleToB2">to B2</el-button>
-      <p>当前页是{{currentPage}}</p>
+      <el-button @click="handleToB1">to BB1</el-button>
     </div>
     <keep-alive>
       <router-view></router-view>
@@ -25,12 +21,11 @@
 
 <script>
 export default {
-  name: "demo-b-page",
+  name: "b-b1",
   components: {},
   data() {
     return {
-      num: 0,
-      currentPage: "B页"
+      num: 0
     }
   },
   created() {},
@@ -41,11 +36,7 @@ export default {
     },
     handleToB1() {
       this.currentPage = "B1页"
-      this.$router.push({ name: "b1" })
-    },
-    handleToB2() {
-      this.currentPage = "B2页"
-      this.$router.push({ name: "b2" })
+      this.$router.push({ name: "bb1" })
     }
   }
 }
