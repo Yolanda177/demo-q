@@ -56,24 +56,23 @@
         ></el-cascader>
       </el-form-item>
     </el-form>
-    <json-view :data="jsonData"></json-view>
+    <el-tree :data="tree" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
   </div>
 </template>
 
 <script>
 // import XzCrop from './component/xz-crop'
-import JsonView from "./component/json-view/index"
 import getTimeTypes from "../../utils/getTimeByType"
 import MyCol from "./component/my-col"
 import MyRow from "./component/my-row"
+import ElTree from "./component/tree"
 
 export default {
   name: "demo-a-page",
   components: {
-    // XzCrop,
-    JsonView,
     MyCol,
-    MyRow
+    MyRow,
+    ElTree
   },
   data() {
     return {
@@ -150,6 +149,21 @@ export default {
         region: [],
         time: "",
         type: "jcl"
+      },
+      status: "",
+      value: "",
+      tree: [{
+        label: "一级 1",
+        children: [{
+          label: "二级 1-1",
+          children: [{
+            label: "三级 1-1-1"
+          }]
+        }]
+      }],
+      defaultProps: {
+        children: "children",
+        label: "label"
       }
     }
   },
@@ -167,11 +181,36 @@ export default {
     })
   },
   mounted() {
-    const str = " 20200403"
-    const length = this.getStringLength(str)
-    console.log(length)
+    class MyPromise {
+      constructor(executor) {
+        this.status = "pending"
+        this.value = "undefined"
+        const resolve = result => {
+          if (this.status !== "pending") return
+          this.status = "resolved"
+          this.value = result
+        }
+        const reject = reason => {
+          if (this.status !== "pending") return
+          this.status = "rejected"
+          this.value = reason
+        }
+        try {
+          executor(resolve, reject)
+        } catch (e) {
+          reject(e)
+        }
+      }
+    }
+    const p1 = new MyPromise(resolve => {
+      resolve(1)
+    })
+    console.log(p1)
   },
   methods: {
+    handleNodeClick(data) {
+      console.log(data)
+    },
     getStringLength(str) {
       {
         const strArray = str.split(" ")
