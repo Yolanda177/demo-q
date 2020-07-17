@@ -1,3 +1,10 @@
+<!--
+ * @Description:
+ * @Author: Liangqq
+ * @Date: 2020-04-11 22:27:08
+ * @LastEditors: Liangqq
+ * @LastEditTime: 2020-05-06 09:45:00
+ -->
 <template>
   <div>
     b2 Page

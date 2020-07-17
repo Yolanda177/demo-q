@@ -3,9 +3,9 @@
  * @Author: Liangqq
  * @Date: 2020-04-28 17:25:07
  * @LastEditors: Liangqq
- * @LastEditTime: 2020-04-29 16:51:22
+ * @LastEditTime: 2020-05-06 13:18:34
  */
-import { hasOwn } from "element-ui/src/utils/util"
+import { hasOwn } from "../utils/util"
 /* eslint-disable */
 const RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g
 /**

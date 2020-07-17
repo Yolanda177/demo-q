@@ -2,7 +2,7 @@
  * @Description:
  * @Author: Liangqq
  * @Date: 2020-04-08 14:58:56
- * @LastEditTime: 2020-04-08 14:59:08
+ * @LastEditTime: 2020-06-23 09:35:47
  * @LastEditors: Liangqq
  -->
 <template>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "b-b1-1",
+  name: 'b-b1-1',
   components: {},
   data() {
     return {

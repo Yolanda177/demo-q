@@ -2,7 +2,7 @@
  * @Description:
  * @Author: Liangqq
  * @Date: 2019-11-13 09:45:53
- * @LastEditTime: 2020-04-08 15:00:25
+ * @LastEditTime: 2020-06-23 09:36:24
  * @LastEditors: Liangqq
  -->
 <template>
@@ -25,12 +25,12 @@
 
 <script>
 export default {
-  name: "demo-b-page",
+  name: 'demo-b-page',
   components: {},
   data() {
     return {
       num: 0,
-      currentPage: "B页"
+      currentPage: 'B页'
     }
   },
   created() {},
@@ -40,12 +40,12 @@ export default {
       this.num += 1
     },
     handleToB1() {
-      this.currentPage = "B1页"
-      this.$router.push({ name: "b1" })
+      this.currentPage = 'B1页'
+      this.$router.push({ name: 'b1' })
     },
     handleToB2() {
-      this.currentPage = "B2页"
-      this.$router.push({ name: "b2" })
+      this.currentPage = 'B2页'
+      this.$router.push({ name: 'b2' })
     }
   }
 }

@@ -2,7 +2,7 @@
  * @Description:
  * @Author: Liangqq
  * @Date: 2019-11-13 09:46:11
- * @LastEditTime: 2020-04-08 17:21:16
+ * @LastEditTime: 2020-06-23 09:36:32
  * @LastEditors: Liangqq
  -->
 <template>
@@ -33,28 +33,28 @@
 
 <script>
 export default {
-  name: "demo-c-page",
+  name: 'demo-c-page',
   components: {},
   data() {
     return {
       num: 0,
       currentRow: null,
       tableData: [{
-        date: "2016-05-02",
-        name: "王小虎",
-        address: "上海市普陀区金沙江路 1518 弄"
+        date: '2016-05-02',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
       }, {
-        date: "2016-05-04",
-        name: "王小虎",
-        address: "上海市普陀区金沙江路 1517 弄"
+        date: '2016-05-04',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1517 弄'
       }, {
-        date: "2016-05-01",
-        name: "王小虎",
-        address: "上海市普陀区金沙江路 1519 弄"
+        date: '2016-05-01',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1519 弄'
       }, {
-        date: "2016-05-03",
-        name: "王小虎",
-        address: "上海市普陀区金沙江路 1516 弄"
+        date: '2016-05-03',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1516 弄'
       }]
     }
   },

@@ -21,7 +21,7 @@
 <script>
 
 export default {
-  name: 'xz-crop',
+  name: "xz-crop",
   props: {
     imageUrl: String, // 传入文件url
     getCropImgBlob: Function // 返回裁剪后的文件(blob)
@@ -68,9 +68,9 @@ export default {
     init() {
       // toBlob()方法的Polyfill
       if (!HTMLCanvasElement.prototype.toBlob) {
-        Object.defineProperty(HTMLCanvasElement.prototype, 'toBlob', {
+        Object.defineProperty(HTMLCanvasElement.prototype, "toBlob", {
           value(callback, type, quality) {
-            const binStr = atob(this.toDataURL(type, quality).split(',')[1])
+            const binStr = atob(this.toDataURL(type, quality).split(",")[1])
             const len = binStr.length
             const arr = new Uint8Array(len)
 
@@ -78,14 +78,14 @@ export default {
               arr[i] = binStr.charCodeAt(i)
             }
 
-            callback(new Blob([arr], { type: type || 'image/png' }))
+            callback(new Blob([arr], { type: type || "image/png" }))
           }
         })
       }
 
       this.imageObj = new Image()
       if (this.imageUrl !== null) {
-        this.targetImg = document.createElement('canvas') // 创建导出图片所用canvas
+        this.targetImg = document.createElement("canvas") // 创建导出图片所用canvas
         this.imageObj.src = this.imageUrl
         this.imageObj.onload = () => {
           const {
@@ -126,13 +126,13 @@ export default {
           cropCanvas.height = this.cropCanvasHeight
 
           // 获取裁剪框二维上下文对象
-          this.cropContext = cropCanvas.getContext('2d')
+          this.cropContext = cropCanvas.getContext("2d")
 
           // canvasImg设定高度完成后
           this.$nextTick(() => {
           // 展示源image的缩放图作为底图
             sourceImg
-              .getContext('2d')
+              .getContext("2d")
               .drawImage(this.imageObj, 0, 0, sourceImgWidth, sourceImgHeight)
 
             const { cropCanvasHeight, cropCanvasWidth } = this
@@ -152,8 +152,8 @@ export default {
           })
         }
       }
-      window.addEventListener('mouseup', this.clearAndGet) // 松开鼠标清空部分数据以及获取裁剪后的图片
-      window.addEventListener('mousemove', this.moveZoomCrop) // (在当前sourceImg内点击时)移动鼠标时移动或缩放剪切框
+      window.addEventListener("mouseup", this.clearAndGet) // 松开鼠标清空部分数据以及获取裁剪后的图片
+      window.addEventListener("mousemove", this.moveZoomCrop) // (在当前sourceImg内点击时)移动鼠标时移动或缩放剪切框
     },
     /**
      * @msg: 移动缩放框
@@ -233,7 +233,7 @@ export default {
           && resultHeight > 0
           && resultWidth > 0
         ) {
-          console.log('当鼠标在源图像范围内时')
+          console.log("当鼠标在源图像范围内时")
           // 直接根据鼠标偏移量获得裁剪框的实际宽高
           this.lock = false
           cropCanvas.width = resultHeight
@@ -246,32 +246,32 @@ export default {
           cropCanvas.width = 0
           cropCanvas.height = 0
         } else {
-          console.log('当鼠标划过右边缘或下边缘时')
+          console.log("当鼠标划过右边缘或下边缘时")
           console.log(cropContainer.offsetLeft + resultWidth)
           console.log(cropContainer.offsetTop + resultHeight)
           const maxWidth = cropContainer.offsetLeft + resultWidth < this.sourceImgWidth
           const maxHeight = cropContainer.offsetTop + resultHeight < this.sourceImgHeight
           if ((maxWidth || maxHeight) && !this.lock) {
-            console.log('1')
+            console.log("1")
             this.lock = true
             if (sourceImgWidth > sourceImgHeight) {
-              console.log('1: 宽>高')
+              console.log("1: 宽>高")
               cropCanvas.width = sourceImgHeight - (cropContainer.offsetTop - blankHeight)
               cropCanvas.height = sourceImgHeight - (cropContainer.offsetTop - blankHeight)
             } else {
-              console.log('1: 宽<高')
+              console.log("1: 宽<高")
               cropCanvas.height = sourceImgWidth - (cropContainer.offsetLeft - blankWidth)
               cropCanvas.width = sourceImgWidth - (cropContainer.offsetLeft - blankWidth)
             }
           } else if (!(maxWidth || maxHeight) && !this.lock) {
-            console.log('2')
+            console.log("2")
             this.lock = true
             if (sourceImgWidth > sourceImgHeight) {
-              console.log('2:宽>高')
+              console.log("2:宽>高")
               cropCanvas.width = sourceImgWidth - cropContainer.offsetLeft
               cropCanvas.height = sourceImgWidth - cropContainer.offsetLeft
             } else {
-              console.log('2: 宽<高')
+              console.log("2: 宽<高")
               cropCanvas.width = sourceImgHeight - cropContainer.offsetTop
               cropCanvas.height = sourceImgHeight - cropContainer.offsetTop
             }
@@ -360,7 +360,7 @@ export default {
       this.targetImg.height = this.targetImgHeigth // 设置目标canvas的高
       // 写入图像
       this.targetImg
-        .getContext('2d')
+        .getContext("2d")
         .drawImage(
           this.imageObj,
           this.targetImgLeft,
@@ -382,15 +382,15 @@ export default {
         blob => {
           this.getCropImgBlob(blob)
         },
-        'image/jpeg',
+        "image/jpeg",
         0.5
       )
     }
   },
   beforeDestroy() {
     // 清楚监听器
-    window.removeEventListener('mouseup', this.clearAndGet)
-    window.removeEventListener('mousemove', this.moveZoomCrop)
+    window.removeEventListener("mouseup", this.clearAndGet)
+    window.removeEventListener("mousemove", this.moveZoomCrop)
   }
 }
 </script>

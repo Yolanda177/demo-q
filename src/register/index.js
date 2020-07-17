@@ -1,6 +1,16 @@
+/*
+ * @Description:
+ * @Author: Liangqq
+ * @Date: 2020-04-11 22:27:08
+ * @LastEditors: Liangqq
+ * @LastEditTime: 2020-07-16 22:38:03
+ */
 // 统一注册全局配置、组件以及指令
 
 import Vue from 'vue'
+
+// eslint-disable-next-line import/no-extraneous-dependencies
+import debouncethrottle from 'v-debounce-throttle'
 
 // 引入饼状图
 import 'echarts/lib/chart/pie'
@@ -38,6 +48,7 @@ import '@/styles/index.scss'
 import '@/icon/svg'
 
 Vue.use(ElementUI)
+Vue.use(debouncethrottle)
 
 // 开发环境导入mockjs
 // if (process.env.NODE_ENV === 'development') {

@@ -2,7 +2,7 @@
  * @Description:
  * @Author: Liangqq
  * @Date: 2019-12-14 21:49:04
- * @LastEditTime: 2020-04-08 15:00:42
+ * @LastEditTime: 2020-06-23 09:35:55
  * @LastEditors: Liangqq
  -->
 <template>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "b-b1",
+  name: 'b-b1',
   components: {},
   data() {
     return {
@@ -35,8 +35,8 @@ export default {
       this.num += 1
     },
     handleToB1() {
-      this.currentPage = "B1页"
-      this.$router.push({ name: "bb1" })
+      this.currentPage = 'B1页'
+      this.$router.push({ name: 'bb1' })
     }
   }
 }

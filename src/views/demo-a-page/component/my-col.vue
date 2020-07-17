@@ -1,3 +1,10 @@
+<!--
+ * @Description:
+ * @Author: Liangqq
+ * @Date: 2020-04-11 22:27:08
+ * @LastEditors: Liangqq
+ * @LastEditTime: 2020-07-10 17:23:04
+ -->
 <script>
 export default {
   name: 'my-col',
@@ -9,7 +16,7 @@ export default {
   },
   computed: {
     gutter() {
-      console.log(this.$parent)
+      // console.log(this.$parent)
       let parent = this.$parent
       while (parent && parent.$options.componentName !== 'MyRow') {
         parent = parent.$parent
